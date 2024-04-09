@@ -5,11 +5,13 @@ import UpdateProfile from "./Pages/UpdateProfile.jsx";
 import UserProfile from "./Pages/UserProfile.jsx";
 import Login from "./Pages/Login.jsx";
 import Register from "./Pages/Register.jsx";
+import NotFound from "./NotFound.jsx";
 
 const Router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: "/",

@@ -1,6 +1,22 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
+  const { signinUser } = useContext(AuthContext);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    const { email, password } = data;
+    signinUser(email, password).then(() => {
+      console.log("signin successfully");
+    });
+  };
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -9,7 +25,7 @@ const Login = () => {
             <h1 className="text-5xl font-bold">Login now!</h1>
           </div>
           <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -18,8 +34,11 @@ const Login = () => {
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
-                  required
+                  {...register("email", { required: true })}
                 />
+                {errors.email && (
+                  <span className="text-red-500">This field is required</span>
+                )}
               </div>
               <div className="form-control">
                 <label className="label">
@@ -29,8 +48,11 @@ const Login = () => {
                   type="password"
                   placeholder="password"
                   className="input input-bordered"
-                  required
+                  {...register("password", { required: true })}
                 />
+                {errors.password && (
+                  <span className="text-red-500">This field is required</span>
+                )}
               </div>
               <div className="form-control mt-2">
                 <button className="btn btn-primary">Login</button>
