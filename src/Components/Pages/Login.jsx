@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const { signinUser } = useContext(AuthContext);
@@ -14,7 +15,7 @@ const Login = () => {
   const onSubmit = (data) => {
     const { email, password } = data;
     signinUser(email, password).then(() => {
-      console.log("signin successfully");
+      toast("Login Successfully");
     });
   };
   return (
