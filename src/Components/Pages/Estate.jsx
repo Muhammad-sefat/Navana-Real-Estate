@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SingleEstate from "./SingleEstate";
 
 const Estate = () => {
   const [datas, setData] = useState([]);
@@ -17,7 +18,11 @@ const Estate = () => {
         the essence of our residential spaces and envision the lifestyle that
         awaits you.
       </p>
-      <div></div>
+      <div className="grid md:grid-cols-2 gap-5 py-5">
+        {datas.map((data) => (
+          <SingleEstate key={data.id} data={data}></SingleEstate>
+        ))}
+      </div>
     </div>
   );
 };
