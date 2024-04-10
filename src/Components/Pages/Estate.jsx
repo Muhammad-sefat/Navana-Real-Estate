@@ -1,4 +1,12 @@
+import { useEffect, useState } from "react";
+
 const Estate = () => {
+  const [datas, setData] = useState([]);
+  useEffect(() => {
+    fetch("residential.json")
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, []);
   return (
     <div>
       <h1 className="text-4xl font-bold text-center pt-5">Estate</h1>

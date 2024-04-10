@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Serenity Meadows",
+    "segment_name": "Single-family homes",
+    "image": "https://i.ibb.co/P6Nb9fX/house-01.jpg",
+    "description": "Discover the epitome of luxury living with our exquisite single-family homes at Serenity Meadows. Each residence boasts spacious interiors, high-end finishes, and stunning views of the surrounding landscape.",
+    "price": "$750,000",
+    "status": "Available",
+    "area": "3,500 sq. ft.",
+    "location": "Tranquil Lane, Willow Creek",
+    "facilities": [
+      "Swimming Pool",
+      "Clubhouse",
+      "Fitness Center",
+      "Tennis Court"
+    ],
+    "button_name": "View Property"
+  },
+  {
+    "id": 2,
+    "estate_title": "Harbor View Townhomes",
+    "segment_name": "Townhouses",
+    "image": "https://i.ibb.co/vJ2ssVX/house-02.jpg",
+    "description": "Experience waterfront living at its finest with our elegant townhomes at Harbor View. Nestled along the shoreline, these residences offer modern design, spacious layouts, and breathtaking views of the harbor.",
+    "price": "$500,000",
+    "status": "Available",
+    "area": "2,200 sq. ft.",
+    "location": "Marina Drive, Harbor City",
+    "facilities": [
+      "Private Dock",
+      "Community Park",
+      "Gated Entry",
+      "Walking Trails"
+    ],
+    "button_name": "View Property"
+  },
+  {
+    "id": 3,
+    "estate_title": "Metro Vista Apartments",
+    "segment_name": "Apartments",
+    "image": "https://i.ibb.co/tLSVz7D/house-03.jpg",
+    "description": "Elevate your urban lifestyle with our chic apartments at Metro Vista. Featuring sleek modern design, premium amenities, and a vibrant cityscape backdrop, these residences offer the ultimate in downtown living.",
+    "price": "$2,000/month",
+    "status": "Available",
+    "area": "1,000 sq. ft.",
+    "location": "Downtown Avenue, Metro City",
+    "facilities": [
+      "Rooftop Lounge",
+      "Fitness Center",
+      "Pet Spa",
+      "24/7 Concierge"
+    ],
+    "button_name": "View Property"
+  },
+  {
+    "id": 4,
+    "estate_title": "Campus Commons",
+    "segment_name": "Student Housing",
+    "image": "https://i.ibb.co/Ttq2V5j/house-04.jpg",
+    "description": "Experience the ultimate in student living at Campus Commons. Our modern apartments offer convenient access to campus, upscale amenities, and a vibrant community atmosphere conducive to academic success.",
+    "price": "$1,200/month",
+    "status": "Available",
+    "area": "800 sq. ft.",
+    "location": "University Blvd, College Town",
+    "facilities": [
+      "Study Rooms",
+      "Game Lounge",
+      "Fitness Center",
+      "Outdoor Courtyard"
+    ],
+    "button_name": "View Property"
+  },
+  {
+    "id": 5,
+    "estate_title": "Golden Years Village",
+    "segment_name": "Senior Living Communities",
+    "image": "https://i.ibb.co/FwTmkwg/house-05.jpg",
+    "description": "Embrace retirement living at its finest at Golden Years Village. Our community offers resort-style amenities, engaging activities, and personalized care services, providing seniors with a fulfilling and enriching lifestyle.",
+    "price": "$3,500/month",
+    "status": "Available",
+    "area": "1,200 sq. ft.",
+    "location": "Elderly Lane, Sunset Valley",
+    "facilities": [
+      "Restaurant Dining",
+      "Swimming Pool",
+      "Library",
+      "Medical Services"
+    ],
+    "button_name": "View Property"
+  },
+  {
+    "id": 6,
+    "estate_title": "Seaside Escapes",
+    "segment_name": "Vacation Rentals",
+    "image": "https://i.ibb.co/P6Fhmjh/house-06.jpg",
+    "description": "Escape to paradise with our luxury vacation rentals at Seaside Escapes. Located along the pristine coastline, these waterfront properties offer unparalleled comfort, breathtaking views, and a memorable getaway experience.",
+    "price": "$300/night",
+    "status": "Available",
+    "area": "1,500 sq. ft.",
+    "location": "Oceanfront Blvd, Coastal Retreat",
+    "facilities": [
+      "Private Beach Access",
+      "Outdoor Dining Area",
+      "Spa Services",
+      "Water Sports Gear"
+    ],
+    "button_name": "View Property"
+  }
+]
