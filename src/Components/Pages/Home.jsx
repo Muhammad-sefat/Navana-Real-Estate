@@ -1,7 +1,11 @@
+import Estate from "./Estate";
+import Slider from "./Slider";
+
 const Home = () => {
   return (
     <div>
-      <h1>Our home</h1>
+      <Slider></Slider>
+      <Estate></Estate>
     </div>
   );
 };
