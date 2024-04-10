@@ -6,6 +6,7 @@ import UserProfile from "./Pages/UserProfile.jsx";
 import Login from "./Pages/Login.jsx";
 import Register from "./Pages/Register.jsx";
 import NotFound from "./NotFound.jsx";
+import DetailsEstate from "./Pages/DetailsEstate.jsx";
 
 const Router = createBrowserRouter([
   {
@@ -16,6 +17,11 @@ const Router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/cardstate/:id",
+        element: <DetailsEstate></DetailsEstate>,
+        loader: () => fetch("../residential.json"),
       },
       {
         path: "/login",
