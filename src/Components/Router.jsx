@@ -7,6 +7,7 @@ import Login from "./Pages/Login.jsx";
 import Register from "./Pages/Register.jsx";
 import NotFound from "./NotFound.jsx";
 import DetailsEstate from "./Pages/DetailsEstate.jsx";
+import PrivateRoute from "./Pages/PrivateRoute.jsx";
 
 const Router = createBrowserRouter([
   {
@@ -20,7 +21,11 @@ const Router = createBrowserRouter([
       },
       {
         path: "/cardstate/:id",
-        element: <DetailsEstate></DetailsEstate>,
+        element: (
+          <PrivateRoute>
+            <DetailsEstate></DetailsEstate>
+          </PrivateRoute>
+        ),
         loader: () => fetch("../residential.json"),
       },
       {

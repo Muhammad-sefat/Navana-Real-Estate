@@ -1,11 +1,14 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 const Login = () => {
   const { signinUser, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
 
   const {
     register,
@@ -15,24 +18,30 @@ const Login = () => {
 
   const onSubmit = (data) => {
     const { email, password } = data;
-    signinUser(email, password).then(() => {
+    signinUser(email, password).then((result) => {
       toast("Login Successfully");
+      if (result.user) {
+        navigate(from);
+      }
     });
   };
 
   const googleSignInBtn = () => {
     googleSignIn()
       .then((result) => {
-        console.log(result.user);
-        toast("Login Successfully with Google");
+        if (result.user) {
+          navigate(from);
+        }
       })
       .catch((error) => console.log(error));
   };
 
-  const GithubSignIn = () => {
+  const GithubSignInBtn = () => {
     githubSignIn()
       .then((result) => {
-        console.log(result.user);
+        if (result.user) {
+          navigate(from);
+        }
       })
       .catch((error) => console.log(error));
   };
@@ -79,13 +88,13 @@ const Login = () => {
             </form>
             <div className="text-center pb-2">
               <button
-                onClick={googleSignIn}
+                onClick={googleSignInBtn}
                 className="btn btn-secondary md:w-[78%] mx-auto mb-2"
               >
                 Sign in with Google
               </button>
               <button
-                onClick={GithubSignIn}
+                onClick={GithubSignInBtn}
                 className="btn btn-accent md:w-[78%] mx-auto"
               >
                 Sign in with Github

@@ -62,7 +62,7 @@ const Navbar = () => {
             </ul>
           </div>
           <a className="btn btn-ghost text-2xl  font-bold">
-            Navana<span className="text-[#00CC00]">Group</span>
+            Navana<span className="text-[#00CC00] gap-0">Group</span>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
