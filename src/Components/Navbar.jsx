@@ -1,6 +1,15 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "./AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const logOutBtn = () => {
+    logOut().then(() => {
+      console.log("LogOut Successfully");
+    });
+  };
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -85,9 +94,20 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <NavLink to={"/login"}>
-            <a className="btn font-semibold">Login</a>
-          </NavLink>
+          {user?.email ? (
+            <div className="avatar flex items-center gap-2">
+              <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 m-2">
+                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              </div>
+              <a onClick={logOutBtn} className="btn font-semibold">
+                Logout
+              </a>
+            </div>
+          ) : (
+            <NavLink to={"/login"}>
+              <a className="btn font-semibold">Login</a>
+            </NavLink>
+          )}
         </div>
       </div>
     </div>

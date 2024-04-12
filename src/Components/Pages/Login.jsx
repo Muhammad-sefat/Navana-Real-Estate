@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const { signinUser, googleSignIn } = useContext(AuthContext);
+  const { signinUser, googleSignIn, githubSignIn } = useContext(AuthContext);
 
   const {
     register,
@@ -25,6 +25,14 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         toast("Login Successfully with Google");
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const GithubSignIn = () => {
+    githubSignIn()
+      .then((result) => {
+        console.log(result.user);
       })
       .catch((error) => console.log(error));
   };
@@ -76,7 +84,10 @@ const Login = () => {
               >
                 Sign in with Google
               </button>
-              <button className="btn btn-accent md:w-[78%] mx-auto">
+              <button
+                onClick={GithubSignIn}
+                className="btn btn-accent md:w-[78%] mx-auto"
+              >
                 Sign in with Github
               </button>
             </div>
