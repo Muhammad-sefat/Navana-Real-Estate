@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);

@@ -5,18 +5,28 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const { signinUser } = useContext(AuthContext);
+  const { signinUser, googleSignIn } = useContext(AuthContext);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     const { email, password } = data;
     signinUser(email, password).then(() => {
       toast("Login Successfully");
     });
+  };
+
+  const googleSignInBtn = () => {
+    googleSignIn()
+      .then((result) => {
+        console.log(result.user);
+        toast("Login Successfully with Google");
+      })
+      .catch((error) => console.log(error));
   };
   return (
     <div>
@@ -60,7 +70,10 @@ const Login = () => {
               </div>
             </form>
             <div className="text-center pb-2">
-              <button className="btn btn-secondary md:w-[78%] mx-auto mb-2">
+              <button
+                onClick={googleSignIn}
+                className="btn btn-secondary md:w-[78%] mx-auto mb-2"
+              >
                 Sign in with Google
               </button>
               <button className="btn btn-accent md:w-[78%] mx-auto">
