@@ -3,6 +3,7 @@ import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signinUser, googleSignIn, githubSignIn } = useContext(AuthContext);
@@ -50,6 +51,9 @@ const Login = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Navana Group | Login</title>
+      </Helmet>
       <div className="hero-content flex-col ">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Login now!</h1>

@@ -4,6 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -28,6 +29,9 @@ const Register = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Navana Group | Register</title>
+      </Helmet>
       <div className="hero-content flex-col">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Register now!</h1>

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const SingleEstate = ({ data }) => {
@@ -13,6 +14,9 @@ const SingleEstate = ({ data }) => {
   } = data;
   return (
     <div>
+      <Helmet>
+        <title>Navana Group | Home</title>
+      </Helmet>
       <div className="card bg-base-100 shadow-xl h-full">
         <figure>
           <img className="w-full p-3" src={image} />
