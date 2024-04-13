@@ -17,6 +17,10 @@ const Register = () => {
 
   const onSubmit = (data) => {
     const { email, password } = data;
+    if (!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)) {
+      toast("Please Provide More Stronge Password");
+      return;
+    }
     createUser(email, password).then(() => {
       toast("Register Successfully");
       navigate("/");
