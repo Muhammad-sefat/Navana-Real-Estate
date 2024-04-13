@@ -51,14 +51,18 @@ const Navbar = () => {
                   Update Profile
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  to="/userProfile"
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  User Profile
-                </NavLink>
-              </li>
+              {user?.email ? (
+                <li>
+                  <NavLink
+                    to="/userProfile"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    User Profile
+                  </NavLink>
+                </li>
+              ) : (
+                ""
+              )}
             </ul>
           </div>
           <a className="btn btn-ghost text-2xl  font-bold">
@@ -85,19 +89,33 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/userProfile"
+                to="/aboutus"
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
-                User Profile
+                About us
               </NavLink>
             </li>
+            {user?.email ? (
+              <li>
+                <NavLink
+                  to="/userProfile"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  User Profile
+                </NavLink>
+              </li>
+            ) : (
+              ""
+            )}
           </ul>
         </div>
         <div className="navbar-end">
           {user?.email ? (
             <div className="avatar flex items-center gap-2">
               <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 m-2">
-                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                {user?.photoURL || (
+                  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                )}
               </div>
               <a onClick={logOutBtn} className="btn font-semibold">
                 Logout

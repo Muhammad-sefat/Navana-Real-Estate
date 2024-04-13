@@ -8,6 +8,7 @@ import Register from "./Pages/Register.jsx";
 import NotFound from "./NotFound.jsx";
 import DetailsEstate from "./Pages/DetailsEstate.jsx";
 import PrivateRoute from "./Pages/PrivateRoute.jsx";
+import AboutUs from "./Pages/AboutUs.jsx";
 
 const Router = createBrowserRouter([
   {
@@ -43,6 +44,14 @@ const Router = createBrowserRouter([
       {
         path: "/userprofile",
         element: <UserProfile></UserProfile>,
+      },
+      {
+        path: "/aboutus",
+        element: (
+          <PrivateRoute>
+            <AboutUs></AboutUs>
+          </PrivateRoute>
+        ),
       },
     ],
   },

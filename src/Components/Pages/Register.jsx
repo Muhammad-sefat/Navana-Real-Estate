@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
@@ -13,93 +13,94 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
     const { email, password } = data;
     createUser(email, password).then(() => {
       toast("Register Successfully");
+      navigate("/");
     });
   };
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Register now!</h1>
-          </div>
-          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Name</span>
-                </label>
+      <div className="hero-content flex-col">
+        <div className="text-center lg:text-left">
+          <h1 className="text-5xl font-bold">Register now!</h1>
+        </div>
+        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border border-[#00CC00]">
+          <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="name"
+                className="input input-bordered"
+                {...register("name", { required: true })}
+              />
+              {errors.name && (
+                <span className="text-red-500">This field is required</span>
+              )}
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <input
+                type="email"
+                placeholder="email"
+                className="input input-bordered"
+                {...register("email", { required: true })}
+              />
+              {errors.email && (
+                <span className="text-red-500">This field is required</span>
+              )}
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">PhotoURL</span>
+              </label>
+              <input
+                type="text"
+                placeholder="photoURL"
+                className="input input-bordered"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <div className="relative">
                 <input
-                  type="text"
-                  placeholder="name"
-                  className="input input-bordered"
-                  {...register("name", { required: true })}
+                  type={showBtn ? "text" : "password"}
+                  placeholder="password"
+                  className="input input-bordered w-full"
+                  {...register("password", { required: true })}
                 />
-                {errors.name && (
-                  <span className="text-red-500">This field is required</span>
-                )}
+                <span
+                  className="absolute bottom-3 right-3 text-xl"
+                  onClick={() => setShowBtn(!showBtn)}
+                >
+                  {showBtn ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
+                </span>
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="email"
-                  className="input input-bordered"
-                  {...register("email", { required: true })}
-                />
-                {errors.email && (
-                  <span className="text-red-500">This field is required</span>
-                )}
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">PhotoURL</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="photoURL"
-                  className="input input-bordered"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <div className="relative">
-                  <input
-                    type={showBtn ? "text" : "password"}
-                    placeholder="password"
-                    className="input input-bordered w-full"
-                    {...register("password", { required: true })}
-                  />
-                  <span
-                    className="absolute bottom-3 right-3 text-xl"
-                    onClick={() => setShowBtn(!showBtn)}
-                  >
-                    {showBtn ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
-                  </span>
-                </div>
-                {errors.password && (
-                  <span className="text-red-500">This field is required</span>
-                )}
-              </div>
-              <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
-              </div>
-            </form>
-            <p className="text-center py-3">
-              Already Have An Account ? Please{" "}
-              <NavLink to={"/login"}>
-                {" "}
-                <span className="text-blue-500 font-medium">Login</span>
-              </NavLink>
-            </p>
-          </div>
+              {errors.password && (
+                <span className="text-red-500">This field is required</span>
+              )}
+            </div>
+            <div className="form-control mt-6">
+              <button className="btn btn-primary">Register</button>
+            </div>
+          </form>
+          <p className="text-center py-3">
+            Already Have An Account ? Please{" "}
+            <NavLink to={"/login"}>
+              {" "}
+              <span className="text-blue-500 font-medium">Login</span>
+            </NavLink>
+          </p>
         </div>
       </div>
     </div>
