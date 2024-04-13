@@ -1,11 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const [showBtn, setShowBtn] = useState(false);
   const {
     register,
     handleSubmit,
@@ -68,12 +70,20 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input
-                  type="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                  {...register("password", { required: true })}
-                />
+                <div className="relative">
+                  <input
+                    type={showBtn ? "text" : "password"}
+                    placeholder="password"
+                    className="input input-bordered w-full"
+                    {...register("password", { required: true })}
+                  />
+                  <span
+                    className="absolute bottom-3 right-3 text-xl"
+                    onClick={() => setShowBtn(!showBtn)}
+                  >
+                    {showBtn ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
+                  </span>
+                </div>
                 {errors.password && (
                   <span className="text-red-500">This field is required</span>
                 )}
