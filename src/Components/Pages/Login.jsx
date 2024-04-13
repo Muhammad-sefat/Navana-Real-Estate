@@ -16,10 +16,11 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
     const { email, password } = data;
     signinUser(email, password).then((result) => {
       toast("Login Successfully");
+      e.target.reset();
       if (result.user) {
         navigate(from);
       }
