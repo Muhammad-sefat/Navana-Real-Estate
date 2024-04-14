@@ -92,7 +92,7 @@ const Navbar = () => {
                 to="/aboutus"
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
-                About us
+                Contact Us
               </NavLink>
             </li>
             {user?.email ? (

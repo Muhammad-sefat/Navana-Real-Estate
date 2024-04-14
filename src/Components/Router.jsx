@@ -8,7 +8,7 @@ import Register from "./Pages/Register.jsx";
 import NotFound from "./NotFound.jsx";
 import DetailsEstate from "./Pages/DetailsEstate.jsx";
 import PrivateRoute from "./Pages/PrivateRoute.jsx";
-import AboutUs from "./Pages/AboutUs.jsx";
+import ContactUs from "./Pages/ContactUs.jsx";
 
 const Router = createBrowserRouter([
   {
@@ -49,7 +49,7 @@ const Router = createBrowserRouter([
         path: "/aboutus",
         element: (
           <PrivateRoute>
-            <AboutUs></AboutUs>
+            <ContactUs></ContactUs>
           </PrivateRoute>
         ),
       },
