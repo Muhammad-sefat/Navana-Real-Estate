@@ -28,7 +28,7 @@ const Register = () => {
     });
   };
   return (
-    <div>
+    <div data-aos="fade-down" data-aos-duration="1000">
       <Helmet>
         <title>Navana Group | Register</title>
       </Helmet>

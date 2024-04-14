@@ -13,7 +13,7 @@ const SingleEstate = ({ data }) => {
     id,
   } = data;
   return (
-    <div>
+    <div data-aos="zoom-in" data-aos-duration="1000">
       <Helmet>
         <title>Navana Group | Home</title>
       </Helmet>

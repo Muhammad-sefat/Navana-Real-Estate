@@ -50,7 +50,7 @@ const Login = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-duration="1000">
       <Helmet>
         <title>Navana Group | Login</title>
       </Helmet>

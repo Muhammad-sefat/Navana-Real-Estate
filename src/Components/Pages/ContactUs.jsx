@@ -6,9 +6,13 @@ const ContactUs = () => {
       <Helmet>
         <title>Navana Group | Contact Us</title>
       </Helmet>
-      <section className="py-6 dark:bg-gray-100 dark:text-gray-900">
+      <section className="py-6 dark:bg-gray-100 dark:text-gray-900 border border-[#00CC00]  rounded-t-md">
         <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
-          <div className="py-6 md:py-0 md:px-6">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            className="py-6 md:py-0 md:px-6"
+          >
             <h1 className="text-4xl font-bold">Get in touch</h1>
             <p className="pt-2 pb-4">
               Fill in the form to start a conversation
@@ -55,6 +59,8 @@ const ContactUs = () => {
             </div>
           </div>
           <form
+            data-aos="fade-right"
+            data-aos-duration="1000"
             noValidate=""
             className="flex flex-col py-6 space-y-6 md:py-0 md:px-6"
           >
@@ -83,7 +89,7 @@ const ContactUs = () => {
             </label>
             <button
               type="button"
-              className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 dark:bg-violet-600 dark:text-gray-50 focus:dark:ring-violet-600 hover:dark:ring-violet-600"
+              className="self-center border border-[#00CC00] px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 dark:bg-violet-600 dark:text-gray-50 focus:dark:ring-violet-600 hover:dark:ring-violet-600"
             >
               Submit
             </button>

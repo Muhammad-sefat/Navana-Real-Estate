@@ -1,23 +1,50 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../AuthProvider";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const UpdateProfile = () => {
-  const { user } = useContext(AuthContext);
+  const { user, updateUser } = useContext(AuthContext);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    const { name, image } = data;
+    updateUser(name, image).then(() => {
+      toast("Profile Update Successful");
+      e.target.reset();
+    });
+  };
+
   return (
-    <div>
+    <div data-aos="fade-left" data-aos-duration="1000">
       <Helmet>
         <title>Navana Group | Update Profile</title>
       </Helmet>
       <section className="p-6 dark:text-gray-800">
         <form
+          onSubmit={handleSubmit(onSubmit)}
           noValidate=""
           className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow dark:bg-gray-50 border border-[#00CC00]"
         >
           <div className="text-center">
-            <img src={user.photoURL} className="rounded-full mx-auto" />
-            <p className="font-semibold">{user.displayName}</p>
-            <p>{user.email}</p>
+            <img
+              src={
+                user?.photoURL || (
+                  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                )
+              }
+              className="rounded-full mx-auto"
+            />
+            <p className="font-semibold">
+              {user?.displayName || "Muhammad Sefat"}
+            </p>
+            <p>{user?.email || "muhammadsefat55@gmail.com"}</p>
           </div>
           <h2 className="w-full text-3xl font-bold leading-tight text-center">
             Update Profile
@@ -32,19 +59,27 @@ const UpdateProfile = () => {
               placeholder="Your name"
               required=""
               className="block w-full border p-2 rounded-md focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100"
+              {...register("name", { required: true })}
             />
+            {errors.name && (
+              <span className="text-red-500">This field is required</span>
+            )}
           </div>
           <div>
             <label htmlFor="email" className="block mb-1 ml-1">
-              Email
+              Photo URL
             </label>
             <input
               id="email"
-              type="email"
-              placeholder="Your email"
+              type="text"
+              placeholder="Your Photo URL"
               required=""
               className="block w-full border p-2 rounded-md focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100"
+              {...register("image", { required: true })}
             />
+            {errors.image && (
+              <span className="text-red-500">This field is required</span>
+            )}
           </div>
           <div>
             <button
