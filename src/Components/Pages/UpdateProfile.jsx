@@ -34,17 +34,16 @@ const UpdateProfile = () => {
         >
           <div className="text-center">
             <img
+              className="rounded-full w-36 mx-auto"
               src={
-                user?.photoURL || (
-                  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                )
+                user?.photoURL ||
+                "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
               }
-              className="rounded-full mx-auto"
             />
             <p className="font-semibold">
-              {user?.displayName || "Muhammad Sefat"}
+              Name : {user?.displayName || "Muhammad Sefat"}
             </p>
-            <p>{user?.email || "muhammadsefat55@gmail.com"}</p>
+            <p>Email : {user?.email || "muhammadsefat55@gmail.com"}</p>
           </div>
           <h2 className="w-full text-3xl font-bold leading-tight text-center">
             Update Profile
@@ -86,7 +85,7 @@ const UpdateProfile = () => {
               type="submit"
               className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-violet-600 focus:dark:ring-violet-600 hover:dark:ring-violet-600 dark:text-gray-50"
             >
-              Update
+              Save Change
             </button>
           </div>
         </form>

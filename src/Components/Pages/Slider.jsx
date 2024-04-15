@@ -9,7 +9,7 @@ import { Navigation } from "swiper/modules";
 
 const Slider = () => {
   return (
-    <div>
+    <div className="mt-20 md:mt-0">
       <Swiper navigation={true} modules={[Navigation]} loop={true}>
         <SwiperSlide>
           <div className="py-5">

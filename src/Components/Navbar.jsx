@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user?.photoURL);
 
   const logOutBtn = () => {
     logOut().then(() => {
@@ -50,6 +51,14 @@ const Navbar = () => {
                   className={({ isActive }) => (isActive ? "active" : "")}
                 >
                   Update Profile
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/aboutus"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Contact Us
                 </NavLink>
               </li>
               {user?.email ? (
@@ -113,10 +122,19 @@ const Navbar = () => {
         <div className="navbar-end">
           {user?.email ? (
             <div className="avatar flex items-center gap-2">
-              <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 m-2">
-                {user?.photoURL || (
-                  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                )}
+              <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 m-2 group hover:bg-gray-300">
+                <img
+                  className="rounded-full w-36 mx-auto"
+                  src={
+                    user?.photoURL ||
+                    "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                  }
+                />
+                <ul className="absolute invisible group-hover:visible">
+                  <li className="bg-slate-200 p-1 rounded-md">
+                    {user?.displayName || "Muhammad Sefat"}
+                  </li>
+                </ul>
               </div>
               <a onClick={logOutBtn} className="btn font-semibold">
                 Logout

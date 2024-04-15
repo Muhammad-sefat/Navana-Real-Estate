@@ -28,7 +28,12 @@ const SingleEstate = ({ data }) => {
           </p>
           <div className="flex flex-wrap  gap-4">
             {facilities.map((facilitie) => (
-              <a className="font-medium border p-2 rounded-md">{facilitie}</a>
+              <a
+                key={facilitie.id}
+                className="font-medium border p-2 rounded-md"
+              >
+                {facilitie}
+              </a>
             ))}
           </div>
           <hr className="my-3" />
