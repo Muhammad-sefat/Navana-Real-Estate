@@ -7,7 +7,7 @@ AOS.init();
 
 function App() {
   return (
-    <div className="px-10 mx-auto">
+    <div className="p-5 md:px-10 mx-auto">
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>

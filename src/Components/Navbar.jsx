@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import toast from "react-hot-toast";
 
@@ -13,7 +13,7 @@ const Navbar = () => {
     });
   };
   return (
-    <div>
+    <div className="z-20 relative">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -55,10 +55,10 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to="/aboutus"
+                  to="/blog"
                   className={({ isActive }) => (isActive ? "active" : "")}
                 >
-                  Contact Us
+                  Blog
                 </NavLink>
               </li>
               {user?.email ? (
@@ -75,9 +75,12 @@ const Navbar = () => {
               )}
             </ul>
           </div>
-          <a className="btn btn-ghost text-2xl  font-bold">
-            Navana<span className="text-[#00CC00] gap-0">Group</span>
-          </a>
+          <Link
+            to={"/"}
+            className="btn btn-ghost text-base md:text-2xl  font-bold gap-0"
+          >
+            Navana<span className="text-[#00CC00]">Group</span>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-3 font-medium">
@@ -99,10 +102,10 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/aboutus"
+                to="/blog"
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
-                Contact Us
+                Blog
               </NavLink>
             </li>
             {user?.email ? (
@@ -122,7 +125,7 @@ const Navbar = () => {
         <div className="navbar-end">
           {user?.email ? (
             <div className="avatar flex items-center gap-2">
-              <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 m-2 group hover:bg-gray-300">
+              <div className="w-9 md:w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 m-2 group hover:bg-gray-300">
                 <img
                   className="rounded-full w-36 mx-auto"
                   src={
