@@ -10,6 +10,7 @@ const UpdateProfile = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -17,7 +18,7 @@ const UpdateProfile = () => {
     const { name, image } = data;
     updateUser(name, image).then(() => {
       toast("Profile Update Successful");
-      e.target.reset();
+      reset();
     });
   };
 
@@ -69,7 +70,7 @@ const UpdateProfile = () => {
               Photo URL
             </label>
             <input
-              id="email"
+              id="image"
               type="text"
               placeholder="Your Photo URL"
               required=""

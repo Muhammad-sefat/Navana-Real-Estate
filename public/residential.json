@@ -6,7 +6,7 @@
     "image": "https://i.ibb.co/P6Nb9fX/house-01.jpg",
     "description": "Discover the epitome of luxury living with our exquisite single-family homes at Serenity Meadows. Each residence boasts spacious interiors, high-end finishes, and stunning views of the surrounding landscape.",
     "price": "$750,000",
-    "status": "Available",
+    "status": "Sale",
     "area": "3,500 sq. ft.",
     "location": "Tranquil Lane, Willow Creek",
     "facilities": [
@@ -24,7 +24,7 @@
     "image": "https://i.ibb.co/vJ2ssVX/house-02.jpg",
     "description": "Experience waterfront living at its finest with our elegant townhomes at Harbor View. Nestled along the shoreline, these residences offer modern design, spacious layouts, and breathtaking views of the harbor.",
     "price": "$500,000",
-    "status": "Available",
+    "status": "Rent",
     "area": "2,200 sq. ft.",
     "location": "Marina Drive, Harbor City",
     "facilities": [
@@ -42,7 +42,7 @@
     "image": "https://i.ibb.co/tLSVz7D/house-03.jpg",
     "description": "Elevate your urban lifestyle with our chic apartments at Metro Vista. Featuring sleek modern design, premium amenities, and a vibrant cityscape backdrop, these residences offer the ultimate in downtown living.",
     "price": "$2,000/month",
-    "status": "Available",
+    "status": "Sale",
     "area": "1,000 sq. ft.",
     "location": "Downtown Avenue, Metro City",
     "facilities": [
@@ -60,7 +60,7 @@
     "image": "https://i.ibb.co/JHFH02C/house-04.jpg",
     "description": "Experience the ultimate in student living at Campus Commons. Our modern apartments offer convenient access to campus, upscale amenities, and a vibrant community atmosphere conducive to academic success.",
     "price": "$1,200/month",
-    "status": "Available",
+    "status": "Sale",
     "area": "800 sq. ft.",
     "location": "University Blvd, College Town",
     "facilities": [
@@ -78,7 +78,7 @@
     "image": "https://i.ibb.co/FwTmkwg/house-05.jpg",
     "description": "Embrace retirement living at its finest at Golden Years Village. Our community offers resort-style amenities, engaging activities, and personalized care services, providing seniors with a fulfilling and enriching lifestyle.",
     "price": "$3,500/month",
-    "status": "Available",
+    "status": "Sale",
     "area": "1,200 sq. ft.",
     "location": "Elderly Lane, Sunset Valley",
     "facilities": [
@@ -96,7 +96,7 @@
     "image": "https://i.ibb.co/P6Fhmjh/house-06.jpg",
     "description": "Escape to paradise with our luxury vacation rentals at Seaside Escapes. Located along the pristine coastline, these waterfront properties offer unparalleled comfort, breathtaking views, and a memorable getaway experience.",
     "price": "$300/night",
-    "status": "Available",
+    "status": "Rent",
     "area": "1,500 sq. ft.",
     "location": "Oceanfront Blvd, Coastal Retreat",
     "facilities": [

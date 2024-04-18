@@ -17,37 +17,38 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data, e) => {
+  const onSubmit = (data) => {
     const { email, password } = data;
     signinUser(email, password)
       .then((result) => {
         toast("Login Successfully");
-        e.target.reset();
         if (result.user) {
           navigate(from);
         }
       })
-      .catch(() => toast("Please Provide Valid Information"));
+      .catch(() => toast("Please Provide Valid Email & Password"));
   };
 
   const googleSignInBtn = () => {
     googleSignIn()
       .then((result) => {
+        toast("Login Successfully");
         if (result.user) {
           navigate(from);
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => toast(error));
   };
 
   const GithubSignInBtn = () => {
     githubSignIn()
       .then((result) => {
+        toast("Login Successfully");
         if (result.user) {
           navigate(from);
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => toast(error));
   };
   return (
     <div data-aos="fade-up" data-aos-duration="1000">

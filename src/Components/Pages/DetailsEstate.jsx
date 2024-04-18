@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const DetailsEstate = () => {
@@ -9,6 +10,7 @@ const DetailsEstate = () => {
     segment_name,
     price,
     area,
+    status,
     location,
     estate_title,
     facilities,
@@ -16,6 +18,9 @@ const DetailsEstate = () => {
   } = singleCard;
   return (
     <div>
+      <Helmet>
+        <title>Navana Group | Card</title>
+      </Helmet>
       <div className="hero min-h-screen bg-base-200 p-5 rounded-md">
         <div className="hero-content flex-col lg:flex-row-reverse gap-8">
           <img
@@ -40,6 +45,7 @@ const DetailsEstate = () => {
             <div className="flex justify-between items-center pb-2">
               <p className="font-medium">Price : {price}</p>
               <p className="font-medium">Area : {area}</p>
+              <p className="font-medium">Status : {status}</p>
             </div>
             <Link to={"/"}>
               <button className="btn bg-[#00CC00] mt-3">Back To Home</button>

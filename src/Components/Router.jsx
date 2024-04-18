@@ -9,6 +9,7 @@ import NotFound from "./NotFound.jsx";
 import DetailsEstate from "./Pages/DetailsEstate.jsx";
 import PrivateRoute from "./Pages/PrivateRoute.jsx";
 import Blog from "./Pages/Blog.jsx";
+import ContactUs from "./Pages/ContactUs.jsx";
 
 const Router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const Router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/contactus",
+        element: <ContactUs></ContactUs>,
       },
       {
         path: "/cardstate/:id",

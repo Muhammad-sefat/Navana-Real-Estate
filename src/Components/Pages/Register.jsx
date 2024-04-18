@@ -7,25 +7,31 @@ import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUser } = useContext(AuthContext);
   const [showBtn, setShowBtn] = useState(false);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
-  const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    const { email, password } = data;
+    const { email, password, name, image } = data;
+    console.log(name, image);
     if (!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)) {
       toast("Please Provide More Stronge Password");
       return;
     }
-    createUser(email, password).then(() => {
-      toast("Register Successfully");
-      navigate("/");
-    });
+    createUser(email, password)
+      .then(() => {
+        updateUser(name, image);
+        toast("Register Successfully");
+        reset();
+        navigate("/");
+      })
+      .catch((error) => toast(error));
   };
   return (
     <div data-aos="fade-down" data-aos-duration="1000">
@@ -43,6 +49,7 @@ const Register = () => {
                 <span className="label-text">Name</span>
               </label>
               <input
+                id="name"
                 type="text"
                 placeholder="name"
                 className="input input-bordered"
@@ -71,6 +78,7 @@ const Register = () => {
                 <span className="label-text">PhotoURL</span>
               </label>
               <input
+                id="image"
                 type="text"
                 placeholder="photoURL"
                 className="input input-bordered"

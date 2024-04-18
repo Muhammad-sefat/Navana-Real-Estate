@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user?.photoURL);
+  console.log(user);
 
   const logOutBtn = () => {
     logOut().then(() => {
@@ -47,6 +47,14 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
+                  to="/contactus"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Contact Us
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   to="/updateprofile"
                   className={({ isActive }) => (isActive ? "active" : "")}
                 >
@@ -61,7 +69,7 @@ const Navbar = () => {
                   Blog
                 </NavLink>
               </li>
-              {user?.email ? (
+              {user ? (
                 <li>
                   <NavLink
                     to="/userProfile"
@@ -94,6 +102,14 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
+                to="/contactus"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Contact Us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/updateprofile"
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
@@ -108,7 +124,7 @@ const Navbar = () => {
                 Blog
               </NavLink>
             </li>
-            {user?.email ? (
+            {user ? (
               <li>
                 <NavLink
                   to="/userProfile"
@@ -123,7 +139,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          {user?.email ? (
+          {user ? (
             <div className="avatar flex items-center gap-2">
               <div className="w-9 md:w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 m-2 group hover:bg-gray-300">
                 <img

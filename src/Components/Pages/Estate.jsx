@@ -4,7 +4,7 @@ import SingleEstate from "./SingleEstate";
 const Estate = () => {
   const [datas, setData] = useState([]);
   useEffect(() => {
-    fetch("residential.json")
+    fetch("./residential.json")
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
