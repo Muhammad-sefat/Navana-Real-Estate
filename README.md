@@ -1,8 +1,24 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# NavanaGroup
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+## Features
+
+- Showing Active Link by React Route.
+- Use Firebase Authentication by Email/Password,Google,Github.
+- Use Private Route.
+- Responsive For All Device.
+- Use Slider and Aos Animation.
+
+### Three Package Used
+- AOS Package
+- React Hook Form
+- Swiper Slider
+
+
+
+## 🔗 Links
+Live Link : https://navana-real-estate-965a9.firebaseapp.com/
+
