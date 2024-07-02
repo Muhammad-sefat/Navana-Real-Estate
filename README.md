@@ -2,6 +2,9 @@
 # NavanaGroup
 
 
+### Overview
+NavanaGroup is an interactive corporate website designed to showcase the dynamic essence of the Navana Group, highlighting its diverse business ventures and corporate values. Built with modern web technologies, it provides a visually engaging and secure user experience.
+
 
 
 ## Features
@@ -11,12 +14,15 @@
 - Use Private Route.
 - Responsive For All Device.
 - Use Slider and Aos Animation.
+- Optimized for various devices, ensuring a seamless experience on desktops, tablets, and smartphones.
+- Smooth animations and transitions to enhance user engagement.
+- Detailed information about Navana Group’s history, mission, and vision.
 
-### Three Package Used
-- AOS Package
-- React Hook Form
-- Swiper Slider
-
+#### How to Clone and run in your local machine
+- git clone <repository_url>
+- cd repo-name
+- npm install   # or yarn install
+- npm start     # or yarn start
 
 
 ## 🔗 Links
